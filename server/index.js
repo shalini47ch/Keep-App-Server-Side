@@ -2,12 +2,12 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const Keeper=require("./models/Keeper")
+const Keeper=require("./models/Keeper");
 
-const app=express()
-app.use(express.json())
-app.use(cors())
-app.use(express.urlencoded())
+const app=express();
+app.use(express.json());
+app.use(cors());
+app.use(express.urlencoded());
 
 //mongo db atlas is down at the moment
 mongoose.connect("",
