@@ -3,17 +3,17 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const Keeper = require("./models/Keeper");
-// const dotenv=require("dotenv");
+const dotenv=require("dotenv");
 
 const app = express();
 app.use(express.json());
 app.use(cors());
-// dotenv.config();
+dotenv.config();
 app.use(express.urlencoded());
 
 //mongo db atlas is down at the moment
 mongoose.connect(
-  "mongodb+srv://shalini47choudhary:Mxahg7yOdF7sJoz0@cluster0.r3myb.mongodb.net/?retryWrites=true&w=majority",
+  `mongodb+srv://shalini47choudhary:${process.env.MONGO_PASSWORD}@cluster0.r3myb.mongodb.net/?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
     if (err) {
